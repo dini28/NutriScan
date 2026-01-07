@@ -1,0 +1,160 @@
+/* About Section */
+.about-section-main {
+  padding: 100px 24px;
+  background-color: #ffffff;
+  font-family: system-ui, sans-serif;
+  overflow: hidden;
+}
+
+.about-container-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 60px;
+  align-items: center;
+}
+
+/* Subtitle */
+.about-subtitle {
+  color: #10b981;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+/* Title */
+.about-title-main {
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  font-weight: 800;
+  color: #1e293b;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  font-family: "Black Ops One", system-ui, sans-serif;
+}
+
+.about-title-accent {
+  color: #10b981;
+  font-family: "Black Ops One", system-ui, sans-serif;
+}
+
+/* Description */
+.about-description-main {
+  color: #64748b;
+  font-size: 17px;
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+
+/* Stats Wrapper */
+.stats-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.stat-item h4 {
+  margin: 0;
+  font-size: 24px;
+  color: #10b981;
+}
+
+.stat-item p {
+  margin: 0;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.stat-divider {
+  width: 1px;
+  background-color: #e2e8f0;
+}
+
+/* Join Button */
+.join-button {
+  padding: 16px 32px;
+  background-color: #1e293b;
+  color: white;
+  border-radius: 14px;
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+/* Workflow Container */
+.workflow-main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+}
+
+/* Step Card */
+.cardData-main {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px;
+  background-color: #f8fafc;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+  cursor: default;
+  transform: translateX(0);
+  position: relative;
+}
+
+.cardData-main.hovered {
+  background-color: #f0fdf4;
+  border-color: #10b981;
+  transform: translateX(10px);
+}
+
+/* Icon Box */
+.cardData-icon-box {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+}
+
+.cardData-icon-box.green {
+  background-color: #10b981;
+}
+
+.cardData-icon-box.blue {
+  background-color: #3b82f6;
+}
+
+.cardData-icon-box.orange {
+  background-color: #f59e0b;
+}
+
+/* Step Content */
+.cardData-content-main {
+  flex: 1;
+}
+
+.cardData-content-main h3 {
+  margin: 0 0 4px 0;
+  font-size: 18px;
+  color: #1e293b;
+}
+
+.cardData-content-main p {
+  margin: 0;
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.5;
+}

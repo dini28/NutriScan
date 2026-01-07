@@ -1,0 +1,733 @@
+.dashboard-page {
+    padding: 120px 20px 80px;
+    background: #f8fafc;
+    min-height: 100vh;
+}
+
+.dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.dashboard-header {
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.dashboard-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: #ecfdf5;
+    color: #059669;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.dashboard-header h2 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 12px;
+}
+
+.dashboard-header p {
+    color: #64748b;
+    font-size: 18px;
+}
+
+.highlight {
+    color: #10b981;
+}
+
+/* Tabs Styling */
+.dashboard-tabs {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 32px;
+    background: #f1f5f9;
+    padding: 6px;
+    border-radius: 18px;
+    width: fit-content;
+}
+
+.tab-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    border-radius: 14px;
+    border: none;
+    background: transparent;
+    color: #64748b;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tab-btn.active {
+    background: white;
+    color: #10b981;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.tab-count {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 6px;
+    background: #10b981;
+    color: white;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.tab-count.warning {
+    background: #ef4444;
+}
+
+/* NGO Dashboard Styles */
+.dashboard-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+.search-bar {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 24px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease;
+}
+
+.search-bar:focus-within {
+    border-color: #10b981;
+    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.1);
+}
+
+.search-bar input {
+    border: none;
+    background: none;
+    width: 100%;
+    font-size: 15px;
+    color: #1e293b;
+    outline: none;
+}
+
+.stats-row-mini {
+    display: flex;
+    gap: 16px;
+}
+
+.mini-stat {
+    padding: 12px 24px;
+    background: white;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.mini-stat-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.mini-stat-value {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1e293b;
+}
+
+.listings-grid-dash {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 24px;
+}
+
+.dash-card {
+    background: white;
+    border-radius: 24px;
+    border: 1px solid #e2e8f0;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.dash-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+    border-color: #10b981;
+}
+
+.dash-card.claimed {
+    border-color: #3b82f6;
+    background: #f0f9ff;
+}
+
+.dash-card.picked-up {
+    opacity: 0.7;
+    background: #f8fafc;
+}
+
+.dash-card-header h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 4px;
+}
+
+.card-top-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.status-badge {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    border-radius: 100px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.status-badge.success {
+    background: #ecfdf5;
+    color: #059669;
+}
+
+.restaurant-name {
+    font-size: 14px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.urgent-badge-mini {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    background: #fef2f2;
+    color: #ef4444;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.dash-card-body {
+    padding: 16px 0;
+    border-top: 1px solid #f1f5f9;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.dash-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.meta-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #475569;
+}
+
+.meta-row svg {
+    color: #10b981;
+}
+
+.dash-card-footer {
+    margin-top: auto;
+}
+
+.claim-action-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px;
+    background: #10b981;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.claim-action-btn:hover {
+    background: #059669;
+    gap: 12px;
+}
+
+.pickup-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.pickup-complete-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.pickup-complete-btn:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+}
+
+.pickup-cancel-btn {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f1f5f9;
+    color: #64748b;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.pickup-cancel-btn:hover {
+    background: #fee2e2;
+    color: #ef4444;
+}
+
+.completed-notice {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #059669;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 12px;
+    background: #ecfdf5;
+    border-radius: 12px;
+}
+
+/* Restaurant Dashboard Styles */
+.dash-hero-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    background: white;
+    padding: 32px;
+    border-radius: 24px;
+    border: 1px solid #e2e8f0;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.dash-stats-panel {
+    display: flex;
+    gap: 48px;
+}
+
+.panel-stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-v {
+    font-size: 24px;
+    font-weight: 800;
+    color: #1e293b;
+}
+
+.stat-l {
+    font-size: 13px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.add-donation-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    background: #0f172a;
+    color: white;
+    border: none;
+    border-radius: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-donation-btn:hover {
+    background: #10b981;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(16, 185, 129, 0.2);
+}
+
+.donation-form-container {
+    background: white;
+    border-radius: 24px;
+    border: 1px solid #e2e8f0;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+    margin-bottom: 40px;
+}
+
+.form-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 32px;
+}
+
+.form-header h3 {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.close-form {
+    background: #f1f5f9;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.form-group input,
+.form-group select {
+    padding: 12px 16px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+    border-color: #10b981;
+}
+
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon svg {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+}
+
+.input-with-icon input {
+    padding-left: 40px;
+    width: 100%;
+}
+
+.checkbox-group {
+    grid-column: 1 / -1;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    color: #475569;
+}
+
+.checkbox-label input {
+    width: 20px;
+    height: 20px;
+    accent-color: #10b981;
+}
+
+.submit-form-btn {
+    width: 100%;
+    padding: 16px;
+    background: #10b981;
+    color: white;
+    border: none;
+    border-radius: 14px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-form-btn:hover {
+    background: #059669;
+}
+
+.submit-form-btn:disabled {
+    background: #10b981;
+    cursor: default;
+}
+
+/* Manage Donations List */
+.manage-donations {
+    background: white;
+    padding: 40px;
+    border-radius: 24px;
+    border: 1px solid #e2e8f0;
+}
+
+.section-header-dash {
+    margin-bottom: 32px;
+}
+
+.section-header-dash h3 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 4px;
+}
+
+.section-header-dash p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.donation-items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.donation-item-row {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 20px 24px;
+    background: #f8fafc;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.donation-item-row:hover {
+    background: white;
+    border-color: #10b981;
+}
+
+.item-main-info {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.item-icon-circle {
+    width: 48px;
+    height: 48px;
+    background: white;
+    color: #10b981;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+.item-main-info h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 4px;
+}
+
+.item-meta-dash {
+    font-size: 13px;
+    color: #64748b;
+}
+
+.item-status-pill {
+    flex: 1;
+}
+
+.pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.pill.available {
+    background: #ecfdf5;
+    color: #059669;
+}
+
+.pill.claimed {
+    background: #fefce8;
+    color: #a16207;
+}
+
+.pill.picked-up {
+    background: #eff6ff;
+    color: #1d4ed8;
+}
+
+.item-time-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.time-label {
+    font-size: 11px;
+    color: #94a3b8;
+    font-weight: 600;
+}
+
+.time-value {
+    font-size: 13px;
+    font-weight: 600;
+    color: #475569;
+}
+
+.item-row-actions {
+    display: flex;
+    justify-content: flex-end;
+    min-width: 40px;
+}
+
+.delete-item-btn {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    padding: 8px;
+    transition: all 0.2s;
+}
+
+.delete-item-btn:hover {
+    color: #ef4444;
+    transform: scale(1.1);
+}
+
+.empty-state-mini {
+    padding: 40px;
+    text-align: center;
+    color: #94a3b8;
+    border: 1px dashed #e2e8f0;
+    border-radius: 16px;
+}
+
+@media (max-width: 900px) {
+    .donation-item-row {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .item-status-pill,
+    .item-time-info {
+        flex: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .stats-row-mini {
+        justify-content: space-between;
+    }
+
+    .mini-stat {
+        flex: 1;
+    }
+
+    .dash-hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .dash-stats-panel {
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
