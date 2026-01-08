@@ -113,8 +113,24 @@ const Nutrition = () => {
                                     </div>
 
                                     <div className="card-header-right">
-                                        <div className="calories-value">{recipe.calories}</div>
-                                        <div className="calories-label">kcal/100g</div>
+                                        <div className="calories-container">
+                                            <div className="calories-value">{recipe.calories}</div>
+                                            <div className="calories-label">kcal/100g</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Recipe Image/Illustration Container */}
+                                <div className="card-visual-section">
+                                    <div className="recipe-image-container">
+                                        <div className="image-overlay"></div>
+                                        {recipe.image ? (
+                                            <img src={recipe.image} alt={recipe.name} className="recipe-img" />
+                                        ) : (
+                                            <div className="recipe-placeholder" style={{ background: `linear-gradient(135deg, ${recipe.color}20, ${recipe.color}40)` }}>
+                                                <Leaf size={40} color={recipe.color} opacity={0.5} />
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
 

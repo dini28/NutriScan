@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Leaf } from 'lucide-react';
+import { Leaf, Target, TrendingUp } from 'lucide-react';
 import { cardData } from '../../../data/about';
 import './About.css';
 
@@ -35,14 +35,23 @@ const About = () => {
           </p>
 
           <div className="stats-wrapper">
-            <div className="stat-item">
-              <h4>98%</h4>
-              <p>Accuracy Rate</p>
+            <div className="stat-card">
+              <div className="stat-icon-bg">
+                <Target size={20} />
+              </div>
+              <div className="stat-info">
+                <h4>98%</h4>
+                <p>Accuracy Rate</p>
+              </div>
             </div>
-            <div className="stat-divider" />
-            <div className="stat-item">
-              <h4>50k+</h4>
-              <p>Meals Diverted</p>
+            <div className="stat-card">
+              <div className="stat-icon-bg secondary">
+                <TrendingUp size={20} />
+              </div>
+              <div className="stat-info">
+                <h4>50k+</h4>
+                <p>Meals Diverted</p>
+              </div>
             </div>
           </div>
 
@@ -65,6 +74,7 @@ const About = () => {
               onMouseLeave={() => setHoveredCard(null)}
               className={`cardData-main ${hoveredCard === cardData.id ? 'hovered' : ''}`}
             >
+              <div className="step-tag">Step 0{index + 1}</div>
               <div className={`cardData-icon-box ${cardData.colorClass}`}>
                 {cardData.icon}
               </div>

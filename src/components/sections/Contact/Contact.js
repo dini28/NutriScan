@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Send,
-  User,
   Mail,
   MessageSquare,
   CheckCircle,
@@ -10,7 +9,8 @@ import {
   Phone,
   Clock,
   Heart,
-  Utensils
+  Utensils,
+  User
 } from 'lucide-react';
 import './Contact.css';
 
@@ -222,7 +222,7 @@ const Contact = () => {
                   <div className="form-group">
                     <label className="form-label">Name</label>
                     <div className="input-wrapper">
-                      <User className="input-icon name-icon" size={18} />
+                      <User className="input-icon" size={18} />
                       <input
                         type="text"
                         value={formData.name}
@@ -250,7 +250,7 @@ const Contact = () => {
                   <div className="form-group">
                     <label className="form-label">Email</label>
                     <div className="input-wrapper">
-                      <Mail className="input-icon email-icon" size={18} />
+                      <Mail className="input-icon" size={18} />
                       <input
                         type="email"
                         value={formData.email}

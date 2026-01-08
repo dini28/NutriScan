@@ -8,15 +8,19 @@ import {
     Star,
     Utensils,
     Building2,
-    CheckCircle,
-    ArrowRight
+    ArrowRight,
+    X,
+    Search
 } from 'lucide-react';
 import { restaurants, ngos } from '../../../data/partners';
+import PartnerModal from './PartnerModal';
 import './Partners.css';
 
 const Partners = () => {
     const [activeTab, setActiveTab] = useState('restaurants');
     const [hoveredId, setHoveredId] = useState(null);
+    const [selectedPartner, setSelectedPartner] = useState(null);
+    const [searchTerm, setSearchTerm] = useState('');
 
     const totalRestaurantStats = {
         donations: restaurants.reduce((sum, r) => sum + r.totalDonations, 0),
@@ -27,10 +31,15 @@ const Partners = () => {
     const totalNGOStats = {
         served: ngos.reduce((sum, n) => sum + n.peopleServed, 0),
         partners: ngos.length,
-        locations: ngos.length * 3 // Approximate coverage
+        locations: ngos.length * 3
     };
 
     const data = activeTab === 'restaurants' ? restaurants : ngos;
+
+    const filteredData = data.filter(partner =>
+        partner.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        partner.location.toLowerCase().includes(searchTerm.toLowerCase())
+    );
 
     return (
         <section className="partners-section" id="partners">
@@ -113,7 +122,6 @@ const Partners = () => {
                     <motion.button
                         className={`tab-btn ${activeTab === 'restaurants' ? 'active' : ''}`}
                         onClick={() => setActiveTab('restaurants')}
-                        whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                     >
                         <Utensils size={18} />
@@ -124,7 +132,6 @@ const Partners = () => {
                     <motion.button
                         className={`tab-btn ${activeTab === 'ngos' ? 'active' : ''}`}
                         onClick={() => setActiveTab('ngos')}
-                        whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                     >
                         <Heart size={18} />
@@ -133,12 +140,35 @@ const Partners = () => {
                     </motion.button>
                 </motion.div>
 
-                {/* Partners Grid */}
+                {/* Search Bar */}
+                <motion.div
+                    className="partners-search"
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.3 }}
+                >
+                    <div className="search-input-wrapper">
+                        <Search size={18} className="search-icon-decor" />
+                        <input
+                            type="text"
+                            placeholder={`Search ${activeTab === 'restaurants' ? 'restaurants' : 'NGOs'} by name or location...`}
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.target.value)}
+                        />
+                        {searchTerm && (
+                            <button className="clear-search" onClick={() => setSearchTerm('')}>
+                                <X size={14} />
+                            </button>
+                        )}
+                    </div>
+                </motion.div>
+
                 <motion.div
                     className="partners-grid"
                     layout
                 >
-                    {data.map((partner, i) => {
+                    {filteredData.map((partner, i) => {
                         const isHovered = hoveredId === partner.id;
                         const isRestaurant = activeTab === 'restaurants';
 
@@ -146,94 +176,101 @@ const Partners = () => {
                             <motion.div
                                 key={partner.id}
                                 layout
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                exit={{ opacity: 0, scale: 0.9 }}
-                                transition={{ duration: 0.3, delay: i * 0.05 }}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, scale: 0.95 }}
+                                transition={{ duration: 0.4, delay: i * 0.1 }}
                                 className="partner-card"
                                 onMouseEnter={() => setHoveredId(partner.id)}
                                 onMouseLeave={() => setHoveredId(null)}
-                                whileHover={{ y: -8 }}
                             >
-                                {/* Logo/Avatar */}
-                                <motion.div
-                                    className="partner-logo"
-                                    animate={isHovered ? { scale: 1.1, rotate: -5 } : { scale: 1, rotate: 0 }}
-                                    transition={{ duration: 0.3 }}
-                                >
-                                    <span className="logo-emoji">
-                                        {typeof partner.logo === 'string' ? (
-                                            partner.logo
-                                        ) : (
-                                            <partner.logo width="48" height="48" />
-                                        )}
-                                    </span>
-                                </motion.div>
+                                <div className="card-inner">
+                                    {/* Brand Side */}
+                                    <div className="card-brand">
+                                        <motion.div
+                                            className="partner-logo-box"
+                                            animate={isHovered ? {
+                                                scale: 1.05,
+                                                boxShadow: "0 20px 40px rgba(0,0,0,0.1)"
+                                            } : {
+                                                scale: 1,
+                                                boxShadow: "0 10px 20px rgba(0,0,0,0.05)"
+                                            }}
+                                        >
+                                            <div className="logo-wrapper">
+                                                <img
+                                                    src={partner.logo}
+                                                    alt={partner.name}
+                                                    className="logo-img"
+                                                />
+                                            </div>
+                                        </motion.div>
 
-                                {/* Content */}
-                                <div className="partner-content">
-                                    <div className="partner-header">
-                                        <h3 className="partner-name">{partner.name}</h3>
-                                        <div className="partner-rating">
-                                            <Star size={14} fill="#f59e0b" color="#f59e0b" />
-                                            <span>{partner.rating}</span>
+                                        <div className="brand-info">
+                                            <div className="partner-type-tag">{partner.type}</div>
+                                            <h3 className="partner-name">{partner.name}</h3>
+                                            <div className="partner-location-text">
+                                                <MapPin size={14} />
+                                                {partner.location}
+                                            </div>
                                         </div>
                                     </div>
 
-                                    <div className="partner-meta">
-                                        <span className="meta-item">
-                                            <MapPin size={14} />
-                                            {partner.location}
-                                        </span>
-                                        <span className="meta-sep">•</span>
-                                        <span className="meta-item">{partner.type}</span>
-                                    </div>
+                                    {/* Content Side */}
+                                    <div className="card-details">
+                                        <div className="detail-header">
+                                            <div className="rating-badge">
+                                                <Star size={14} fill="currentColor" />
+                                                <span>{partner.rating}</span>
+                                            </div>
+                                            <span className="joined-date">
+                                                {isRestaurant ? `Since ${partner.joined}` : `Est. ${partner.established}`}
+                                            </span>
+                                        </div>
 
-                                    {/* Stats */}
-                                    <div className="partner-stats">
-                                        {isRestaurant ? (
-                                            <>
-                                                <div className="stat-item">
-                                                    <span className="stat-num">{partner.totalDonations}</span>
-                                                    <span className="stat-label">Donations</span>
-                                                </div>
-                                                <div className="stat-item">
-                                                    <span className="stat-num">{partner.portionsServed}</span>
-                                                    <span className="stat-label">Portions</span>
-                                                </div>
-                                            </>
-                                        ) : (
-                                            <>
-                                                <div className="stat-item">
-                                                    <span className="stat-num">{(partner.peopleServed / 1000).toFixed(1)}K</span>
-                                                    <span className="stat-label">Served</span>
-                                                </div>
-                                                <div className="stat-item">
-                                                    <span className="stat-num">{partner.partnersCount}</span>
-                                                    <span className="stat-label">Partners</span>
-                                                </div>
-                                            </>
-                                        )}
-                                    </div>
+                                        <div className="stats-grid">
+                                            {isRestaurant ? (
+                                                <>
+                                                    <div className="mini-stat">
+                                                        <span className="mini-stat-val">{partner.totalDonations}</span>
+                                                        <span className="mini-stat-lbl">Donations</span>
+                                                    </div>
+                                                    <div className="mini-stat">
+                                                        <span className="mini-stat-val">{(partner.portionsServed / 1000).toFixed(1)}k</span>
+                                                        <span className="mini-stat-lbl">Portions</span>
+                                                    </div>
+                                                </>
+                                            ) : (
+                                                <>
+                                                    <div className="mini-stat">
+                                                        <span className="mini-stat-val">{(partner.peopleServed / 1000).toFixed(1)}k</span>
+                                                        <span className="mini-stat-lbl">Served</span>
+                                                    </div>
+                                                    <div className="mini-stat">
+                                                        <span className="mini-stat-val">{partner.partnersCount}</span>
+                                                        <span className="mini-stat-lbl">Partners</span>
+                                                    </div>
+                                                </>
+                                            )}
+                                        </div>
 
-                                    {/* Impact Badge */}
-                                    <div className="impact-badge">
-                                        <CheckCircle size={14} color="#10b981" />
-                                        <span>{isRestaurant ? partner.impact : partner.focus}</span>
-                                    </div>
+                                        <div className="impact-highlight">
+                                            <div className="impact-icon-box">
+                                                <Heart size={16} />
+                                            </div>
+                                            <div className="impact-text">
+                                                <span className="impact-title">Positive Impact</span>
+                                                <p>{isRestaurant ? partner.impact : partner.focus}</p>
+                                            </div>
+                                        </div>
 
-                                    {/* Joined/Established */}
-                                    <div className="partner-footer">
-                                        <span className="joined-text">
-                                            {isRestaurant ? `Joined ${partner.joined}` : `Est. ${partner.established}`}
-                                        </span>
                                         <motion.button
-                                            className="view-btn"
-                                            whileHover={{ x: 4 }}
-                                            whileTap={{ scale: 0.95 }}
+                                            className="action-link"
+                                            animate={isHovered ? { x: 5 } : { x: 0 }}
+                                            onClick={() => setSelectedPartner(partner)}
                                         >
-                                            View Profile
-                                            <ArrowRight size={14} />
+                                            View Impact Profile
+                                            <ArrowRight size={16} />
                                         </motion.button>
                                     </div>
                                 </div>
@@ -268,8 +305,13 @@ const Partners = () => {
                         <ArrowRight size={18} />
                     </motion.button>
                 </motion.div>
-
             </div>
+
+            <PartnerModal
+                selectedPartner={selectedPartner}
+                activeTab={activeTab}
+                onClose={() => setSelectedPartner(null)}
+            />
         </section>
     );
 };

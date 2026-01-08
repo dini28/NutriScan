@@ -1,5 +1,14 @@
-import { ReactComponent as Restaurant1 } from '../assets/images/Restaurants/restaurants_1.svg';
-import { ReactComponent as Restaurant2 } from '../assets/images/Restaurants/restaurants_2.svg';
+import AB from '../assets/images/Restaurants/AB.webp';
+import DT from '../assets/images/Restaurants/DT.webp';
+import MJ from '../assets/images/Restaurants/MJ.webp';
+import PK from '../assets/images/Restaurants/PK.webp';
+import RM from '../assets/images/Restaurants/RM.webp';
+import SG from '../assets/images/Restaurants/SG.webp';
+
+import AT from '../assets/images/NGO/AT.webp';
+import FFAF from '../assets/images/NGO/FFAF.webp';
+import HK from '../assets/images/NGO/HK.webp';
+import SF from '../assets/images/NGO/SF.webp';
 
 export const restaurants = [
     {
@@ -12,7 +21,7 @@ export const restaurants = [
         portionsServed: 2580,
         rating: 4.9,
         impact: "Fed 860 families",
-        logo: Restaurant1
+        logo: AB
     },
     {
         id: 2,
@@ -24,7 +33,7 @@ export const restaurants = [
         portionsServed: 2235,
         rating: 4.8,
         impact: "Fed 745 families",
-        logo: Restaurant2
+        logo: RM
     },
     {
         id: 3,
@@ -36,7 +45,7 @@ export const restaurants = [
         portionsServed: 1560,
         rating: 4.7,
         impact: "Fed 520 families",
-        logo: Restaurant1
+        logo: DT
     },
     {
         id: 4,
@@ -48,7 +57,7 @@ export const restaurants = [
         portionsServed: 3015,
         rating: 5.0,
         impact: "Fed 1005 families",
-        logo: Restaurant1
+        logo: PK
     },
     {
         id: 5,
@@ -60,7 +69,7 @@ export const restaurants = [
         portionsServed: 2070,
         rating: 4.8,
         impact: "Fed 690 families",
-        logo: Restaurant1
+        logo: MJ
     },
     {
         id: 6,
@@ -72,7 +81,7 @@ export const restaurants = [
         portionsServed: 1815,
         rating: 4.9,
         impact: "Fed 605 families",
-        logo: Restaurant1
+        logo: SG
     }
 ];
 
@@ -87,7 +96,7 @@ export const ngos = [
         partnersCount: 24,
         rating: 5.0,
         focus: "Daily meal distribution",
-        logo: "🤝"
+        logo: FFAF
     },
     {
         id: 2,
@@ -99,7 +108,7 @@ export const ngos = [
         partnersCount: 18,
         rating: 4.9,
         focus: "Children & elderly care",
-        logo: "💚"
+        logo: HK
     },
     {
         id: 3,
@@ -111,7 +120,7 @@ export const ngos = [
         partnersCount: 31,
         rating: 5.0,
         focus: "Urban poverty relief",
-        logo: "🙏"
+        logo: SF
     },
     {
         id: 4,
@@ -123,6 +132,6 @@ export const ngos = [
         partnersCount: 15,
         rating: 4.8,
         focus: "Emergency food aid",
-        logo: "🍚"
+        logo: AT
     }
 ];
