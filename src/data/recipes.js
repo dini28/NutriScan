@@ -8,7 +8,7 @@ export const recipes = [
     carbs: 2,
     calories: 265,
     benefits: 'High protein, excellent source of calcium and vitamin D',
-    color: '#10b981',
+    color: '#64748b',
     quality: 'Excellent',
     verified: true
   },
@@ -34,7 +34,7 @@ export const recipes = [
     carbs: 28,
     calories: 130,
     benefits: 'Good energy source, gluten-free',
-    color: '#3b82f6',
+    color: '#64748b',
     quality: 'Standard',
     verified: true
   },
@@ -60,7 +60,7 @@ export const recipes = [
     carbs: 4.7,
     calories: 28,
     benefits: 'Antioxidants, vitamins, minerals',
-    color: '#ec4899',
+    color: '#854d0e',
     quality: 'Good',
     verified: true
   },
@@ -99,7 +99,7 @@ export const recipes = [
     carbs: 27,
     calories: 164,
     benefits: 'Complete protein source, rich in fiber and minerals',
-    color: '#f97316',
+    color: '#854d0e',
     quality: 'Premium',
     verified: true
   }

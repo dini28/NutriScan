@@ -1,7 +1,3 @@
-/* ========================================
-   NUTRITION SECTION - PREMIUM DESIGN
-   ======================================== */
-
 .nutrition-section {
   padding: 120px 80px;
   background:
@@ -19,10 +15,6 @@
   z-index: 1;
 }
 
-/* ========================================
-   HEADER SECTION
-   ======================================== */
-
 .nutrition-header {
   text-align: center;
   margin-bottom: 60px;
@@ -31,24 +23,16 @@
 .nutrition-badge {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 10px 20px;
-  background: linear-gradient(135deg, rgba(236, 253, 245, 0.9) 0%, rgba(209, 250, 229, 0.9) 100%);
+  gap: 8px;
+  padding: 8px 18px;
+  background: #ecfdf5;
   color: #059669;
-  border-radius: 100px;
+  border-radius: 50px;
   font-size: 14px;
   font-weight: 600;
-  margin-bottom: 24px;
-  border: 1.5px solid rgba(16, 185, 129, 0.2);
-  box-shadow:
-    0 4px 20px rgba(16, 185, 129, 0.12),
-    inset 0 1px 1px rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
+  margin-bottom: 20px;
+  border: 1px solid #059669;
   animation: fadeInUp 0.8s ease-out forwards;
-}
-
-.nutrition-badge svg {
-  animation: sparkle 3s ease-in-out infinite;
 }
 
 .nutrition-title {
@@ -83,10 +67,6 @@
   opacity: 0;
 }
 
-/* ========================================
-   STATS BAR
-   ======================================== */
-
 .nutrition-stats {
   display: flex;
   align-items: center;
@@ -116,7 +96,6 @@
 }
 
 .nutrition-stat-card:hover {
-  transform: translateY(-4px);
   box-shadow:
     0 12px 32px rgba(0, 0, 0, 0.08),
     0 4px 12px rgba(16, 185, 129, 0.1);
@@ -159,20 +138,12 @@
   letter-spacing: -0.01em;
 }
 
-/* ========================================
-   NUTRITION GRID
-   ======================================== */
-
 .nutrition-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 28px;
   margin-bottom: 60px;
 }
-
-/* ========================================
-   NUTRITION CARDS
-   ======================================== */
 
 .nutrition-card {
   padding: 32px;
@@ -229,9 +200,6 @@
   color: #10b981;
 }
 
-.nutrition-card.hovered .card-visual-section {
-  transform: translateY(-5px);
-}
 
 /* Card Visual Section */
 .card-visual-section {
@@ -306,10 +274,6 @@
   pointer-events: none;
 }
 
-/* ========================================
-   CARD HEADER
-   ======================================== */
-
 .card-header {
   display: flex;
   align-items: flex-start;
@@ -374,10 +338,6 @@
   margin-top: 2px;
 }
 
-/* ========================================
-   QUALITY BADGE
-   ======================================== */
-
 .quality-badge {
   display: inline-flex;
   align-items: center;
@@ -393,77 +353,47 @@
   z-index: 1;
 }
 
-/* ========================================
-   MACROS SECTION
-   ======================================== */
-
-.macros-section {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+.macros-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
   margin-bottom: 24px;
   position: relative;
   z-index: 1;
 }
 
-.macro-row {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+.macro-item {
+  background: rgba(248, 250, 252, 0.8);
+  border-radius: 12px;
+  padding: 12px 8px;
+  text-align: center;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  transition: all 0.3s ease;
 }
 
-.macro-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.nutrition-card.hovered .macro-item {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(16, 185, 129, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
 }
 
 .macro-label {
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 700;
   color: #64748b;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  margin-bottom: 4px;
+  display: block;
 }
 
 .macro-value {
-  font-size: 15px;
-  font-weight: 800;
+  font-size: 16px;
+  font-weight: 900;
   color: #1e293b;
   letter-spacing: -0.01em;
+  display: block;
 }
-
-/* Progress Bar */
-.progress-bar {
-  height: 8px;
-  background: #f1f5f9;
-  border-radius: 10px;
-  overflow: hidden;
-  position: relative;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.06);
-}
-
-.progress-fill {
-  height: 100%;
-  border-radius: 10px;
-  position: relative;
-  transition: width 1s cubic-bezier(0.23, 1, 0.32, 1) 0.3s;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.progress-shine {
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-  animation: shine 2s ease-in-out infinite;
-}
-
-/* ========================================
-   BENEFITS FOOTER
-   ======================================== */
 
 .benefits-footer {
   display: flex;
@@ -512,10 +442,6 @@
   line-height: 1.6;
   letter-spacing: -0.01em;
 }
-
-/* ========================================
-   VERIFICATION NOTICE
-   ======================================== */
 
 .verification-notice {
   display: flex;
@@ -585,10 +511,6 @@
   box-shadow: 0 4px 15px rgba(16, 185, 129, 0.15);
 }
 
-/* ========================================
-   DECORATIVE ELEMENTS
-   ======================================== */
-
 .nutrition-decoration {
   position: absolute;
   border-radius: 50%;
@@ -626,10 +548,6 @@
   animation: float 12s ease-in-out infinite 1.5s;
 }
 
-/* ========================================
-   ANIMATIONS
-   ======================================== */
-
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -654,29 +572,6 @@
   }
 }
 
-@keyframes sparkle {
-
-  0%,
-  100% {
-    transform: rotate(0deg) scale(1);
-  }
-
-  50% {
-    transform: rotate(180deg) scale(1.2);
-  }
-}
-
-@keyframes shine {
-  0% {
-    left: -100%;
-  }
-
-  50%,
-  100% {
-    left: 100%;
-  }
-}
-
 @keyframes float {
 
   0%,
@@ -692,10 +587,6 @@
     transform: translate(-20px, 20px) scale(0.9);
   }
 }
-
-/* ========================================
-   RESPONSIVE DESIGN
-   ======================================== */
 
 @media (max-width: 1200px) {
   .nutrition-section {
@@ -799,38 +690,19 @@
   .card-header {
     flex-direction: column;
     gap: 12px;
+    /* align-items: flex-start; */
   }
 
   .card-header-right {
     text-align: left;
+    width: 100%;
   }
 
-  .calories-value {
-    font-size: 24px;
+  .calories-container {
+    display: inline-block;
   }
 
-  .benefits-footer {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .verification-notice {
-    padding: 20px;
-  }
-}
-
-/* ========================================
-   ACCESSIBILITY
-   ======================================== */
-
-@media (prefers-reduced-motion: reduce) {
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+  .macros-grid {
+    gap: 8px;
   }
 }

@@ -1,26 +1,45 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, LogIn, User } from 'lucide-react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = ({ onLoginClick, user, onLogout }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHome = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
-      const sections = ['home', 'about', 'food', 'food-menu', 'nutritional-content', 'partners', 'contact'];
-      for (const section of sections) {
-        const el = document.getElementById(section);
-        if (el && el.getBoundingClientRect().top <= 100) {
-          setActiveSection(section);
+      if (isHome) {
+        const sections = ['home', 'about', 'food', 'food-menu', 'nutritional-content', 'partners', 'contact'];
+        for (const section of sections) {
+          const el = document.getElementById(section);
+          if (el && el.getBoundingClientRect().top <= 100) {
+            setActiveSection(section);
+          }
         }
       }
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isHome]);
+
+  // Handle hash scrolling when arriving from another page
+  useEffect(() => {
+    if (isHome && location.hash) {
+      const id = location.hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          window.scrollTo({ top: element.offsetTop - 100, behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, [isHome, location.hash]);
 
   const navItems = [
     { id: 'home', label: 'Home' },
@@ -33,11 +52,19 @@ const Navbar = ({ onLoginClick, user, onLogout }) => {
   ];
 
   const handleNavClick = (e, id) => {
-    e.preventDefault();
     setIsMenuOpen(false);
-    const element = document.getElementById(id);
-    if (element) {
-      window.scrollTo({ top: element.offsetTop - 100, behavior: 'smooth' });
+
+    if (isHome) {
+      e.preventDefault();
+      const element = document.getElementById(id);
+      if (element) {
+        window.scrollTo({ top: element.offsetTop - 100, behavior: 'smooth' });
+      }
+    } else {
+      // Allow default navigation to /#id
+      // We explicitly navigate to ensure hash change behaves correctly
+      e.preventDefault();
+      navigate(`/#${id}`);
     }
   };
 
@@ -45,7 +72,7 @@ const Navbar = ({ onLoginClick, user, onLogout }) => {
     <>
       <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
         <div className="navbar-container">
-          <div className="navbar-logo">
+          <div className="navbar-logo" onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
             <h1 className="logo-text" style={{ fontFamily: "Bruno Ace", fontWeight: "bold" }}>Nutri<span className="logo-accent" style={{ fontFamily: "Bruno Ace", fontWeight: "bold" }}>Scan</span></h1>
           </div>
 
@@ -53,8 +80,8 @@ const Navbar = ({ onLoginClick, user, onLogout }) => {
             {navItems.map((item) => (
               <li key={item.id}>
                 <a
-                  href={`#${item.id}`}
-                  className={activeSection === item.id ? 'active' : ''}
+                  href={`/#${item.id}`}
+                  className={activeSection === item.id && isHome ? 'active' : ''}
                   onClick={(e) => handleNavClick(e, item.id)}
                 >
                   {item.label}
@@ -97,8 +124,8 @@ const Navbar = ({ onLoginClick, user, onLogout }) => {
               {navItems.map((item) => (
                 <a
                   key={item.id}
-                  href={`#${item.id}`}
-                  className={activeSection === item.id ? 'active' : ''}
+                  href={`/#${item.id}`}
+                  className={activeSection === item.id && isHome ? 'active' : ''}
                   onClick={(e) => handleNavClick(e, item.id)}
                 >
                   {item.label}

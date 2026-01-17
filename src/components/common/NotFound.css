@@ -1,0 +1,168 @@
+.not-found-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 2rem;
+    background: radial-gradient(circle at center, rgba(16, 185, 129, 0.1) 0%, transparent 70%),
+        var(--background-color, #ffffff);
+    color: var(--text-color, #333);
+    overflow: hidden;
+    position: relative;
+}
+
+.not-found-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.not-found-glitch {
+    font-family: 'Bruno Ace', cursive;
+    font-size: 10rem;
+    font-weight: bold;
+    color: var(--text-color, #333);
+    position: relative;
+    line-height: 1;
+    margin: 0;
+    text-shadow: 2px 2px 0px var(--primary-color, #10b981);
+}
+
+.not-found-glitch::before,
+.not-found-glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.not-found-title {
+    font-size: 2.5rem;
+    margin: 1rem 0 0.5rem;
+    color: var(--text-color, #333);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.not-found-text {
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    color: var(--text-light, #666);
+    max-width: 500px;
+    line-height: 1.6;
+}
+
+.not-found-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 2.5rem;
+    background-color: var(--primary-color, #10b981);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.2), 0 2px 4px -1px rgba(16, 185, 129, 0.1);
+}
+
+.not-found-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.2),
+            transparent);
+    transition: 0.5s;
+}
+
+.not-found-btn:hover {
+    box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.3), 0 4px 6px -2px rgba(16, 185, 129, 0.1);
+}
+
+.not-found-btn:hover::before {
+    left: 100%;
+}
+
+@keyframes glitch-anim {
+    0% {
+        clip: rect(33px, 9999px, 11px, 0);
+    }
+
+    20% {
+        clip: rect(87px, 9999px, 96px, 0);
+    }
+
+    40% {
+        clip: rect(15px, 9999px, 63px, 0);
+    }
+
+    60% {
+        clip: rect(54px, 9999px, 21px, 0);
+    }
+
+    80% {
+        clip: rect(9px, 9999px, 36px, 0);
+    }
+
+    100% {
+        clip: rect(68px, 9999px, 5px, 0);
+    }
+}
+
+@keyframes glitch-anim2 {
+    0% {
+        clip: rect(65px, 9999px, 94px, 0);
+    }
+
+    20% {
+        clip: rect(10px, 9999px, 25px, 0);
+    }
+
+    40% {
+        clip: rect(34px, 9999px, 49px, 0);
+    }
+
+    60% {
+        clip: rect(88px, 9999px, 5px, 0);
+    }
+
+    80% {
+        clip: rect(2px, 9999px, 46px, 0);
+    }
+
+    100% {
+        clip: rect(44px, 9999px, 73px, 0);
+    }
+}
+
+@media (max-width: 768px) {
+    .not-found-glitch {
+        font-size: 6rem;
+    }
+
+    .not-found-title {
+        font-size: 1.8rem;
+    }
+
+    .not-found-text {
+        padding: 0 1rem;
+    }
+}

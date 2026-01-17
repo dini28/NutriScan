@@ -1,8 +1,23 @@
 import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './Footer.css';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleLinkClick = (e, id) => {
+    e.preventDefault();
+    if (location.pathname === '/') {
+      const element = document.getElementById(id);
+      if (element) {
+        window.scrollTo({ top: element.offsetTop - 100, behavior: 'smooth' });
+      }
+    } else {
+      navigate(`/#${id}`);
+    }
+  };
 
   return (
     <footer className="footer">
@@ -18,10 +33,10 @@ const Footer = () => {
               and make healthier choices every day.
             </p>
             <div className="socials">
-              <a href="#" aria-label="Facebook"><Facebook size={18} /></a>
-              <a href="#" aria-label="Twitter"><Twitter size={18} /></a>
-              <a href="#" aria-label="Instagram"><Instagram size={18} /></a>
-              <a href="#" aria-label="LinkedIn"><Linkedin size={18} /></a>
+              <a href="*" aria-label="Facebook"><Facebook size={18} /></a>
+              <a href="*" aria-label="Twitter"><Twitter size={18} /></a>
+              <a href="*" aria-label="Instagram"><Instagram size={18} /></a>
+              <a href="*" aria-label="LinkedIn"><Linkedin size={18} /></a>
             </div>
           </div>
 
@@ -29,11 +44,12 @@ const Footer = () => {
           <div className="footer-col">
             <h4>Quick Links</h4>
             <ul>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#features">Features</a></li>
-              <li><a href="#pricing">Pricing</a></li>
-              <li><a href="#blog">Blog</a></li>
+              <li><a href="#home" onClick={(e) => handleLinkClick(e, 'home')}>Home</a></li>
+              <li><a href="#about" onClick={(e) => handleLinkClick(e, 'about')}>About</a></li>
+              {/* Features, Pricing, Blog match to Home/Food/Menu roughly or are placeholders. Mapping to existing IDs */}
+              <li><a href="#food" onClick={(e) => handleLinkClick(e, 'food')}>Category</a></li>
+              <li><a href="#food-menu" onClick={(e) => handleLinkClick(e, 'food-menu')}>Menu</a></li>
+              <li><a href="#nutritional-content" onClick={(e) => handleLinkClick(e, 'nutritional-content')}>Nutrition</a></li>
             </ul>
           </div>
 
@@ -41,11 +57,10 @@ const Footer = () => {
           <div className="footer-col">
             <h4>Support</h4>
             <ul>
-              <li><a href="#help">Help Center</a></li>
-              <li><a href="#faq">FAQs</a></li>
-              <li><a href="#contact">Contact</a></li>
-              <li><a href="#privacy">Privacy</a></li>
-              <li><a href="#terms">Terms</a></li>
+              <li><a href="#partners" onClick={(e) => handleLinkClick(e, 'partners')}>Partners</a></li>
+              <li><a href="#contact" onClick={(e) => handleLinkClick(e, 'contact')}>Contact</a></li>
+              <li><a href="*">Privacy</a></li>
+              <li><a href="*">Terms</a></li>
             </ul>
           </div>
 
@@ -73,11 +88,11 @@ const Footer = () => {
         <div className="footer-bottom">
           <p>&copy; {currentYear} NutriScan. All rights reserved.</p>
           <div className="legal-links">
-            <a href="#privacy">Privacy</a>
+            <a href="*">Privacy</a>
             <span>•</span>
-            <a href="#terms">Terms</a>
+            <a href="*">Terms</a>
             <span>•</span>
-            <a href="#cookies">Cookies</a>
+            <a href="*">Cookies</a>
           </div>
         </div>
 

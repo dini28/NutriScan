@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import {
-    Award,
+    HeartHandshake,
     Heart,
     Users,
     MapPin,
@@ -54,7 +54,7 @@ const Partners = () => {
                     transition={{ duration: 0.6 }}
                 >
                     <span className="section-badge">
-                        <Award size={16} />
+                        <HeartHandshake size={16} />
                         Our Partners
                     </span>
 

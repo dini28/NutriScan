@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
+    Radar,
     ShieldCheck,
     Clock,
     MapPin,
@@ -52,7 +53,7 @@ const Menu = () => {
                     transition={{ duration: 0.6 }}
                 >
                     <div className="live-badge">
-                        <span className="live-dot"></span>
+                        <Radar size={18} />
                         Live Feed
                     </div>
 

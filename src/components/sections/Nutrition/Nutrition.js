@@ -6,7 +6,7 @@ import {
     TrendingUp,
     Shield,
     Leaf,
-    Sparkles
+    Cpu
 } from 'lucide-react';
 import { recipes } from '../../../data/recipes';
 import './Nutrition.css';
@@ -22,20 +22,11 @@ const Nutrition = () => {
 
     const getMacroColor = (macro) => {
         const colors = {
-            protein: '#10b981',
-            fat: '#3b82f6',
-            carbs: '#f59e0b'
+            protein: '#10b981', // Green
+            fat: '#3b82f6',     // Blue
+            carbs: '#f59e0b'    // Amber
         };
         return colors[macro];
-    };
-
-    const getMacroMax = (macro) => {
-        const maxValues = {
-            protein: 30,
-            fat: 30,
-            carbs: 50
-        };
-        return maxValues[macro];
     };
 
     return (
@@ -45,7 +36,7 @@ const Nutrition = () => {
                 {/* Header */}
                 <div className="nutrition-header">
                     <div className="nutrition-badge">
-                        <Sparkles size={16} />
+                        <Cpu size={18} />
                         <span>IoT Nutrition Analysis</span>
                     </div>
 
@@ -141,63 +132,19 @@ const Nutrition = () => {
                                     {recipe.verified && <Zap size={12} fill="currentColor" />}
                                 </div>
 
-                                {/* Macros Section */}
-                                <div className="macros-section">
-                                    {/* Protein */}
-                                    <div className="macro-row">
-                                        <div className="macro-header">
-                                            <span className="macro-label">Protein</span>
-                                            <span className="macro-value">{recipe.protein}g</span>
-                                        </div>
-                                        <div className="progress-bar">
-                                            <div
-                                                className="progress-fill"
-                                                style={{
-                                                    width: `${(recipe.protein / getMacroMax('protein')) * 100}%`,
-                                                    backgroundColor: getMacroColor('protein')
-                                                }}
-                                            >
-                                                <div className="progress-shine"></div>
-                                            </div>
-                                        </div>
+                                {/* Macros Section - Number Only */}
+                                <div className="macros-grid">
+                                    <div className="macro-item">
+                                        <span className="macro-label" style={{ color: getMacroColor('protein') }}>Protein</span>
+                                        <span className="macro-value">{recipe.protein}g</span>
                                     </div>
-
-                                    {/* Fat */}
-                                    <div className="macro-row">
-                                        <div className="macro-header">
-                                            <span className="macro-label">Fat</span>
-                                            <span className="macro-value">{recipe.fat}g</span>
-                                        </div>
-                                        <div className="progress-bar">
-                                            <div
-                                                className="progress-fill"
-                                                style={{
-                                                    width: `${(recipe.fat / getMacroMax('fat')) * 100}%`,
-                                                    backgroundColor: getMacroColor('fat')
-                                                }}
-                                            >
-                                                <div className="progress-shine"></div>
-                                            </div>
-                                        </div>
+                                    <div className="macro-item">
+                                        <span className="macro-label" style={{ color: getMacroColor('fat') }}>Fat</span>
+                                        <span className="macro-value">{recipe.fat}g</span>
                                     </div>
-
-                                    {/* Carbs */}
-                                    <div className="macro-row">
-                                        <div className="macro-header">
-                                            <span className="macro-label">Carbs</span>
-                                            <span className="macro-value">{recipe.carbs}g</span>
-                                        </div>
-                                        <div className="progress-bar">
-                                            <div
-                                                className="progress-fill"
-                                                style={{
-                                                    width: `${(recipe.carbs / getMacroMax('carbs')) * 100}%`,
-                                                    backgroundColor: getMacroColor('carbs')
-                                                }}
-                                            >
-                                                <div className="progress-shine"></div>
-                                            </div>
-                                        </div>
+                                    <div className="macro-item">
+                                        <span className="macro-label" style={{ color: getMacroColor('carbs') }}>Carbs</span>
+                                        <span className="macro-value">{recipe.carbs}g</span>
                                     </div>
                                 </div>
 
@@ -233,8 +180,7 @@ const Nutrition = () => {
                         <h4 className="notice-title">IoT Verified Accuracy</h4>
                         <p className="notice-text">
                             All nutritional data verified by <strong>advanced IoT sensors</strong> with
-                            molecular scanning technology. Accuracy within ±2%. Values calculated
-                            based on real-time analysis of food composition.
+                            molecular scanning technology. Accuracy within ±2%.
                         </p>
                     </div>
                     <div className="notice-badge">

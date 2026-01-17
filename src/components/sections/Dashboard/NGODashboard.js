@@ -4,7 +4,6 @@ import {
     Search,
     MapPin,
     Clock,
-    CheckCircle2,
     Package,
     AlertTriangle,
     ChevronRight,
