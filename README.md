@@ -8,7 +8,6 @@
   [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
   [![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)](https://www.framer.com/motion/)
   [![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)](https://reactrouter.com/)
-  [![Tailwind CSS](https://img.shields.io/badge/Futuristic_UI-Glassmorphism-10b981?style=for-the-badge&logo=css3&logoColor=white)]()
 
   <p align="center">
     NutriScan is a mission-driven platform designed to bridge the gap between surplus food and those in need. <br />
@@ -26,23 +25,23 @@ In a world where food waste is a major challenge, **NutriScan** provides a seaml
 
 ## 🚀 Key Features
 
-### 🔬 Advanced Nutrition Analysis (IoT)
+### Advanced Nutrition Analysis (IoT)
 > *Simulated molecular scanning for verified nutritional data.*
 - **Scientific Verification:** Detailed breakdown of macros (Protein, Fats, Carbs).
 - **Certified Accuracy:** "Certified Accuracy" badges ensuring food quality transparency.
 - **Data Visualization:** Clean, medical-grade presentation of nutritional stats.
 
-### 🏢 Restaurant Dashboard
+### Restaurant Dashboard
 - **Instant Donation:** Streamlined submission form for surplus food items.
 - **Freshness Monitoring:** Real-time tracking of food quality and expiration.
 - **Impact Tracking:** visualize total meals donated and communities fed.
 
-### 🏘️ NGO Dashboard
+### NGO Dashboard
 - **Active Listings:** Real-time view of all available food donations in the vicinity.
 - **Live Feed:** Instant updates on new listings with a "Live" status indicator.
 - **Claim & Pickup:** Efficient logistics management for claimed donations.
 
-### 🌐 Modern Experience
+### Modern Experience
 - **Smart Routing:** Seamless client-side navigation.
 - **Immersive 404:** A custom "System Glitch" error page.
 - **System Loading:** A branded, "System Initializing" boot sequence.
