@@ -1,59 +1,80 @@
-# NutriScan
+<div align="center">
+  <img src="public/preview.png" alt="NutriScan Banner" width="100%" style="border-radius: 10px; margin-bottom: 20px;">
 
-**Rescue Food. Feed Communities. Powered by Technology.**
+  # NutriScan
+  
+  **Rescue Food. Feed Communities. Powered by Technology.**
 
-[![NutriScan Image](public/preview.png)]()
-[![React Router](https://img.shields.io/badge/React_Router-v6-ca4245?style=for-the-badge&logoColor=white)]()
+  [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+  [![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)](https://www.framer.com/motion/)
+  [![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)](https://reactrouter.com/)
+  [![Tailwind CSS](https://img.shields.io/badge/Futuristic_UI-Glassmorphism-10b981?style=for-the-badge&logo=css3&logoColor=white)]()
 
-NutriScan is a futuristic, mission-driven platform designed to bridge the gap between surplus food and those in need. By leveraging advanced concepts like **IoT molecular scanning** and **real-time verification**, we ensure that perfectly good meals find their way to dinner tables instead of landfills.
+  <p align="center">
+    NutriScan is a mission-driven platform designed to bridge the gap between surplus food and those in need. <br />
+    Leveraging <strong>IoT molecular scanning</strong> and <strong>real-time verification</strong> to ensure quality nutrition reaches every table.
+  </p>
+</div>
 
 ---
 
 ## 🌟 Vision
-In a world where food waste is a major challenge, NutriScan provides a seamless, high-tech solution for food rescue operations. We combine social impact with cutting-edge design to empower businesses and NGOs.
+
+In a world where food waste is a major challenge, **NutriScan** provides a seamless, high-tech solution for food rescue operations. We combine social impact with cutting-edge design to empower businesses to be socially responsible and NGOs to scale their impact effectively.
+
+---
 
 ## 🚀 Key Features
 
 ### 🔬 Advanced Nutrition Analysis (IoT)
-- **Scientific Verification:** Detailed breakdown of macros (Protein, Fats, Carbs) verified by simulated IoT molecular sensors.
-- **Premium UI:** Futuristic dashboard interface with glassmorphism and data-driven visualization.
-- **Real-time Accuracy:** "Certified Accuracy" badges ensuring food quality transparency.
+> *Simulated molecular scanning for verified nutritional data.*
+- **Scientific Verification:** Detailed breakdown of macros (Protein, Fats, Carbs).
+- **Certified Accuracy:** "Certified Accuracy" badges ensuring food quality transparency.
+- **Data Visualization:** Clean, medical-grade presentation of nutritional stats.
 
-### Restaurant Dashboard
-- **Instant Donation:** Quick submission form for surplus food items.
+### 🏢 Restaurant Dashboard
+- **Instant Donation:** Streamlined submission form for surplus food items.
 - **Freshness Monitoring:** Real-time tracking of food quality and expiration.
-- **Impact History:** Track total meals donated and communities fed.
+- **Impact Tracking:** visualize total meals donated and communities fed.
 
-### NGO Dashboard
-- **Active Listings:** View all available food donations in the vicinity.
-- **Claim & Pickup:** Streamlined process for claiming donations and managing logistics.
-- **Live Feed:** Real-time updates on available food nearby.
+### 🏘️ NGO Dashboard
+- **Active Listings:** Real-time view of all available food donations in the vicinity.
+- **Live Feed:** Instant updates on new listings with a "Live" status indicator.
+- **Claim & Pickup:** Efficient logistics management for claimed donations.
 
-### Modern Navigation & Routing
-- **Smart Routing:** Seamless client-side navigation using `react-router-dom`.
-- **Custom 404 Experience:** A "Glitch-effect" Not Found page that keeps users engaged even when they get lost.
-- **System Loading:** A branded, "System Initializing" loading sequence.
+### 🌐 Modern Experience
+- **Smart Routing:** Seamless client-side navigation.
+- **Immersive 404:** A custom "System Glitch" error page.
+- **System Loading:** A branded, "System Initializing" boot sequence.
 
-## Tech Stack
+---
 
-- **Frontend:** [React.js](https://reactjs.org/)
-- **Routing:** [React Router Dom](https://reactrouter.com/)
-- **Animations:** [Framer Motion](https://www.framer.com/motion/)
-- **Icons:** [Lucide React](https://lucide.dev/)
-- **State Management:** React Hooks
-- **Styling:** CSS3 (Custom Glassmorphism & Futuristic Design)
+## 💻 Tech Stack
 
-## Installation & Setup
+| Component | Technology | Description |
+|-----------|------------|-------------|
+| **Frontend** | React 19 | Core Component Library |
+| **Routing** | React Router v7 | Client-side Navigation |
+| **Styling** | CSS3 | Custom Glassmorphism & Sci-Fi Theme |
+| **Motion** | Framer Motion | Smooth Transitions & Animations |
+| **Icons** | Lucide React | Modern SVG Iconography |
 
-1. **Clone the repository:**
+---
+
+## 🛠️ Installation & Setup
+
+1. **Clone the repository**
    ```bash
    git clone https://github.com/dini28/NutriScan.git
    ```
-2. **Install dependencies:**
+
+2. **Install dependencies**
    ```bash
+   cd NutriScan
    npm install
    ```
-3. **Start the development server:**
+
+3. **Start the development server**
    ```bash
    npm start
    ```
@@ -61,11 +82,18 @@ In a world where food waste is a major challenge, NutriScan provides a seamless,
 ---
 
 ## 🏆 Hackathon Story
-> "This project was born out of my first-ever hackathon! It was a journey of intense learning—from deep-diving into React documentation at 3 AM to understanding the intricacies of UI/UX for social impact. What started as a coding challenge evolved into a passion project demonstrating how code can serve humanity."
 
-## 🤝 Contribution
-Contributions are welcome! If you have ideas to make NutriScan even better, feel free to fork the repo and submit a PR.
+> "This project was born out of my first-ever hackathon! It was a journey of intense learning—from deep-diving into React documentation at 3 AM to understanding the intricacies of UI/UX for social impact. What started as a coding challenge evolved into a passion project demonstrating how code can serve humanity."
 
 ---
 
-*Made for a better tomorrow.*
+<div align="center">
+
+  **Contributions are welcome!**  
+  *Fork the repo, create a branch, and submit a PR.*
+
+  <br />
+
+  *Made for a better tomorrow.*
+
+</div>
