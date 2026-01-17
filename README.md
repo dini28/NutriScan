@@ -2,7 +2,7 @@
 
 **Rescue Food. Feed Communities. Powered by Technology.**
 
-[![NutriScan Banner](public/preview.png)]()
+[![NutriScan Image](public/preview.png)]()
 [![React Router](https://img.shields.io/badge/React_Router-v6-ca4245?style=for-the-badge&logoColor=white)]()
 
 NutriScan is a futuristic, mission-driven platform designed to bridge the gap between surplus food and those in need. By leveraging advanced concepts like **IoT molecular scanning** and **real-time verification**, we ensure that perfectly good meals find their way to dinner tables instead of landfills.
