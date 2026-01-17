@@ -1,6 +1,4 @@
 <div align="center">
-  <img src="public/preview.png" alt="NutriScan Banner" width="100%" style="border-radius: 10px; margin-bottom: 20px;">
-
   # NutriScan
   
   **Rescue Food. Feed Communities. Powered by Technology.**
@@ -14,6 +12,8 @@
     Leveraging <strong>IoT molecular scanning</strong> and <strong>real-time verification</strong> to ensure quality nutrition reaches every table.
   </p>
 </div>
+
+<img src="public/preview.png" alt="NutriScan Banner" width="100%" style="border-radius: 10px; margin-bottom: 20px;">
 
 ---
 
